@@ -10,5 +10,7 @@ namespace Toders.FindMyContent.Core
         public string MasterLanguage { get; set; }
 
         public Dictionary<string, string> Translations { get; set; }
+
+        public bool IsDeleted { get; set; }
     }
 }

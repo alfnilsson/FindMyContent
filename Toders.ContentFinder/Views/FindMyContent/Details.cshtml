@@ -5,6 +5,7 @@
 @model Toders.FindMyContent.Models.FindMyContent.DetailsModel
 @using EPiServer.Framework.Web.Resources
 @using Toders.FindMyContent.Core
+@using Toders.FindMyContent.Models.FindMyContent
 
 <!DOCTYPE html>
 
@@ -47,7 +48,7 @@
 							<th>Name</th>
 							<th width="180">Language</th>
 						</tr>
-						@foreach (var content in Model.Content)
+						@foreach (ContentSummaryModel content in Model.Content)
 						{
 							var summary = content.Summary;
 							var masterLanguage = summary.Translations.First(t => t.Key == summary.MasterLanguage);

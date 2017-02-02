@@ -48,13 +48,27 @@ namespace Toders.FindMyContent.Core
                 {
                     ContentReference contentLink = contentUsage.ContentLink.ToReferenceWithoutVersion();
 
-                    string masterLanguage;
-                    var translations = GetTranslations(contentLink, out masterLanguage);
+                    var content = _contentLoader.Get<IContent>(contentLink, LanguageSelector.MasterLanguage());
+
+                    var translations = new Dictionary<string, string>();
+
+                    string masterLanguageName = "Unknown";
+                    var localizable = content as ILocalizable;
+                    if (localizable != null)
+                    {
+                        CultureInfo masterLanguage = localizable.MasterLanguage;
+                        masterLanguageName = masterLanguage.Name;
+
+                        translations = GetTranslations(contentLink, localizable.ExistingLanguages.Except(new[] { masterLanguage }));
+                        translations.Add(masterLanguageName, content.Name);
+                    }
+
                     return new ContentSummary
                     {
                         ContentLink = contentLink,
                         Translations = translations,
-                        MasterLanguage = masterLanguage
+                        MasterLanguage = masterLanguageName,
+                        IsDeleted = content.IsDeleted
                     };
                 });
 
@@ -63,28 +77,15 @@ namespace Toders.FindMyContent.Core
             return allContent.OrderBy(item => item.ContentLink.ID).ToList();
         }
 
-        private Dictionary<string, string> GetTranslations(ContentReference contentLink, out string masterLanguageName)
+        private Dictionary<string, string> GetTranslations(ContentReference contentLink, IEnumerable<CultureInfo> existingLanguages)
         {
             var translations = new Dictionary<string, string>();
 
-            var content = _contentLoader.Get<IContent>(contentLink, LanguageSelector.MasterLanguage());
-
-            CultureInfo masterLanguage = null;
-            var localizable = content as ILocalizable;
-            if (localizable != null)
+            foreach (CultureInfo language in existingLanguages)
             {
-                masterLanguage = localizable.MasterLanguage;
-                IEnumerable<CultureInfo> existingLanguages = localizable.ExistingLanguages;
-                foreach (CultureInfo language in existingLanguages.Except(new[] { masterLanguage }))
-                {
-                    var translation = _contentLoader.Get<IContent>(contentLink, language);
-                    translations.Add(language.Name, translation.Name);
-                }
+                var translation = _contentLoader.Get<IContent>(contentLink, language);
+                translations.Add(language.Name, translation.Name);
             }
-            masterLanguageName = masterLanguage != null
-                ? masterLanguage.Name
-                : "Unknown";
-            translations.Add(masterLanguageName, content.Name);
 
             return translations;
         }
