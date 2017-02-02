@@ -2,11 +2,11 @@ using System.ComponentModel.DataAnnotations;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
-using Toders.ContentFinder.Business.Rendering;
-using Toders.ContentFinder.Models.Properties;
 using EPiServer.Web;
+using Toders.FindMyContent.Web.Business.Rendering;
+using Toders.FindMyContent.Web.Models.Properties;
 
-namespace Toders.ContentFinder.Models.Pages
+namespace Toders.FindMyContent.Web.Models.Pages
 {
     /// <summary>
     /// Base class for all page types

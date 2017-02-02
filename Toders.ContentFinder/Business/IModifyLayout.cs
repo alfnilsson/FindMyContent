@@ -1,6 +1,6 @@
-using Toders.ContentFinder.Models.ViewModels;
+using Toders.FindMyContent.Web.Models.ViewModels;
 
-namespace Toders.ContentFinder.Business
+namespace Toders.FindMyContent.Web.Business
 {
     /// <summary>
     /// Defines a method which may be invoked by PageContextActionFilter allowing controllers

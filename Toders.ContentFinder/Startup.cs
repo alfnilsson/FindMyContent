@@ -1,15 +1,17 @@
+using System;
+using System.Web;
 using EPiServer.Cms.UI.AspNetIdentity;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
-using System;
-using System.Web;
+using Toders.FindMyContent.Web;
+using Toders.FindMyContent.Web.Business;
 
-[assembly: OwinStartup(typeof(Toders.ContentFinder.Startup))]
+[assembly: OwinStartup(typeof(Startup))]
 
-namespace Toders.ContentFinder
+namespace Toders.FindMyContent.Web
 {
     public class Startup
     {

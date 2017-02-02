@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
-namespace Toders.ContentFinder.Models
+namespace Toders.FindMyContent.Web.Models.Register
 {
     public class RegisterViewModel
     {

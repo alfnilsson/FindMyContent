@@ -4,7 +4,7 @@ using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.Web;
 
-namespace Toders.ContentFinder.Models.Blocks
+namespace Toders.FindMyContent.Web.Models.Blocks
 {
     /// <summary>
     /// Used to provide a stylized entry point to a page on the site

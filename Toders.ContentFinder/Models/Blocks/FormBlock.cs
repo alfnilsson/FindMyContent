@@ -3,7 +3,7 @@ using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.XForms;
 
-namespace Toders.ContentFinder.Models.Blocks
+namespace Toders.FindMyContent.Web.Models.Blocks
 {
     /// <summary>
     /// Used to insert an XForm

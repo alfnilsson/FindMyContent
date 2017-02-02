@@ -2,7 +2,7 @@ using System.Web;
 using System.Web.WebPages;
 using EPiServer.Web;
 
-namespace Toders.ContentFinder.Business.Channels
+namespace Toders.FindMyContent.Web.Business.Channels
 {
      //<summary>
      //Defines the 'Mobile' content channel

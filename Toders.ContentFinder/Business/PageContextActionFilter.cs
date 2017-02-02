@@ -1,9 +1,9 @@
 using System.Web.Mvc;
-using Toders.ContentFinder.Models.Pages;
-using Toders.ContentFinder.Models.ViewModels;
 using EPiServer.Web.Routing;
+using Toders.FindMyContent.Web.Models.Pages;
+using Toders.FindMyContent.Web.Models.ViewModels;
 
-namespace Toders.ContentFinder.Business
+namespace Toders.FindMyContent.Web.Business
 {
     /// <summary>
     /// Intercepts actions with view models of type IPageViewModel and populates the view models

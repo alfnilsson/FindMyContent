@@ -1,15 +1,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using EPiServer;
 using EPiServer.Core;
 using EPiServer.Filters;
-using Toders.ContentFinder.Business;
-using Toders.ContentFinder.Models.Blocks;
-using Toders.ContentFinder.Models.ViewModels;
 using EPiServer.Web.Mvc;
-using EPiServer;
+using Toders.FindMyContent.Web.Business;
+using Toders.FindMyContent.Web.Models.Blocks;
+using Toders.FindMyContent.Web.Models.ViewModels;
 
-namespace Toders.ContentFinder.Controllers
+namespace Toders.FindMyContent.Web.Controllers
 {
     public class PageListBlockController : BlockController<PageListBlock>
     {

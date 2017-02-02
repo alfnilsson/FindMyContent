@@ -1,11 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
-using EPiServer;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.ServiceLocation;
 
-namespace Toders.ContentFinder.Helpers
+namespace Toders.FindMyContent.Web.Helpers
 {
     /// <summary>
     /// Provides extension methods for categorizable content

@@ -1,4 +1,6 @@
-@model PageListModel
+@using Toders.FindMyContent.Web.Helpers
+@using Toders.FindMyContent.Web.Models.Pages
+@model Toders.FindMyContent.Web.Models.ViewModels.PageListModel
 @Html.FullRefreshPropertiesMetaData(new[] { "IncludePublishDate", "IncludeIntroduction", "Count", "SortOrder", "Root", "PageTypeFilter", "CategoryFilter", "Recursive" })
 <h2 @Html.EditAttributes(x => x.Heading)>@Model.Heading</h2>
 <hr />

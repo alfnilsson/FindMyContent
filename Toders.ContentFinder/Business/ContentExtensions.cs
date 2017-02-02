@@ -4,9 +4,8 @@ using EPiServer.Core;
 using EPiServer.Filters;
 using EPiServer.Framework.Web;
 using EPiServer.ServiceLocation;
-using EPiServer;
 
-namespace Toders.ContentFinder.Business
+namespace Toders.FindMyContent.Web.Business
 {
     /// <summary>
     /// Extension methods for content

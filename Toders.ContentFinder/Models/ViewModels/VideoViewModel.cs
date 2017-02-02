@@ -1,5 +1,5 @@
 
-namespace Toders.ContentFinder.Models.ViewModels
+namespace Toders.FindMyContent.Web.Models.ViewModels
 {
     /// <summary>
     /// View model for the video file

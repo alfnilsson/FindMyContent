@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using EPiServer.Shell.ObjectEditing.EditorDescriptors;
 using EPiServer.Shell.ObjectEditing;
+using EPiServer.Shell.ObjectEditing.EditorDescriptors;
 
-namespace Toders.ContentFinder.Business.EditorDescriptors
+namespace Toders.FindMyContent.Web.Business.EditorDescriptors
 {
     /// <summary>
     /// Register an editor for StringList properties

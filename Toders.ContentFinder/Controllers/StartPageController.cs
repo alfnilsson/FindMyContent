@@ -1,10 +1,10 @@
 using System.Web.Mvc;
-using Toders.ContentFinder.Models.Pages;
-using Toders.ContentFinder.Models.ViewModels;
 using EPiServer.Web;
 using EPiServer.Web.Mvc;
+using Toders.FindMyContent.Web.Models.Pages;
+using Toders.FindMyContent.Web.Models.ViewModels;
 
-namespace Toders.ContentFinder.Controllers
+namespace Toders.FindMyContent.Web.Controllers
 {
     public class StartPageController : PageControllerBase<StartPage>
     {

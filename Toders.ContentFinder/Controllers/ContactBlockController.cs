@@ -1,15 +1,15 @@
 using System.Web;
 using System.Web.Mvc;
+using EPiServer;
 using EPiServer.Core;
-using Toders.ContentFinder.Helpers;
-using Toders.ContentFinder.Models.Blocks;
-using Toders.ContentFinder.Models.Pages;
-using Toders.ContentFinder.Models.ViewModels;
 using EPiServer.Web;
 using EPiServer.Web.Mvc;
-using EPiServer;
+using Toders.FindMyContent.Web.Helpers;
+using Toders.FindMyContent.Web.Models.Blocks;
+using Toders.FindMyContent.Web.Models.Pages;
+using Toders.FindMyContent.Web.Models.ViewModels;
 
-namespace Toders.ContentFinder.Controllers
+namespace Toders.FindMyContent.Web.Controllers
 {
     public class ContactBlockController : BlockController<ContactBlock>
     {

@@ -1,10 +1,10 @@
-using System.Web;
 using System.ComponentModel.DataAnnotations;
-using Toders.ContentFinder.Models.Pages;
-using EPiServer.Web;
+using System.Web;
 using EPiServer.Core;
+using EPiServer.Web;
+using Toders.FindMyContent.Web.Models.Pages;
 
-namespace Toders.ContentFinder.Models.ViewModels
+namespace Toders.FindMyContent.Web.Models.ViewModels
 {
     public class ContactBlockModel
     {

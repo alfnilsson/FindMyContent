@@ -1,8 +1,8 @@
+using System;
 using EPiServer.Core;
 using EPiServer.DataAnnotations;
-using System;
 
-namespace Toders.ContentFinder.Models.Media
+namespace Toders.FindMyContent.Web.Models.Media
 {
     [ContentType(GUID = "EE3BD195-7CB0-4756-AB5F-E5E223CD9820")]
     public class GenericMedia : MediaData

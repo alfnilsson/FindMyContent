@@ -5,7 +5,7 @@ using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.Filters;
 
-namespace Toders.ContentFinder.Models.Blocks
+namespace Toders.FindMyContent.Web.Models.Blocks
 {
     /// <summary>
     /// Used to insert a list of pages, for example a news list

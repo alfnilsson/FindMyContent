@@ -1,4 +1,4 @@
-namespace Toders.ContentFinder.Business.Rendering
+namespace Toders.FindMyContent.Web.Business.Rendering
 {
     /// <summary>
     /// Marker interface for content types which should not be handled by DefaultPageController.

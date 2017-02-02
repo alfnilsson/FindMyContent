@@ -1,5 +1,6 @@
 @using EPiServer.Core
-@model SitePageData
+@using Toders.FindMyContent.Web.Helpers
+@model Toders.FindMyContent.Web.Models.Pages.SitePageData
 <div class="border">
     @using(Html.BeginConditionalLink(Model.HasTemplate(), Url.PageLinkUrl(Model), Model.PageName))
     {

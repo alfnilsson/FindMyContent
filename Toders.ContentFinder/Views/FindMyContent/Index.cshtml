@@ -1,0 +1,67 @@
+﻿@{
+	Layout = null;
+}
+
+@model Toders.FindMyContent.Models.FindMyContent.OverviewModel
+@using EPiServer.Framework.Web.Resources
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>@ViewBag.Title</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+	<!-- Shell -->
+	@Html.Raw(ClientResources.RenderResources("ShellCore"))
+	@Html.Raw(ClientResources.RenderResources("ShellWidgets"))
+
+	<!-- LightTheme -->
+	@Html.Raw(ClientResources.RenderResources("ShellCoreLightTheme"))
+
+	<!-- Navigation -->
+	@Html.Raw(ClientResources.RenderResources("Navigation"))
+
+	<!-- Dojo Dashboard -->
+	@Html.Raw(ClientResources.RenderResources("DojoDashboardCompatibility", new[] { ClientResourceType.Style }))
+
+</head>
+<body>
+	@Html.Raw(Html.ShellInitializationScript())
+	<div class="epi-padding">
+
+		<div class="epi-contentContainer epi-fullWidth">
+
+			<div class="epi-contentArea">
+				<h1 class="EP-prefix">My Plugin</h1>
+				<p>This is my example plugin with EPiServer look and feel</p>
+			</div>
+
+			<div class="epi-formArea">
+				<table class="epi-default">
+					<tbody>
+						<tr>
+							<th>Name</th>
+							<th>Type</th>
+							<th>Amount of content</th>
+						</tr>
+						@foreach (var contentType in Model.ContentTypes)
+						{
+							<tr>
+								<td><a href="Details/@contentType.Id">@contentType.Name</a></td>
+								<td>@contentType.Category</td>
+								<td>@contentType.AmountOfContent</td>
+							</tr>
+						}
+
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+
+	</div>
+
+</body>
+</html>

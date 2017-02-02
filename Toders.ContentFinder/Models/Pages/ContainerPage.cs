@@ -1,6 +1,6 @@
-using Toders.ContentFinder.Business.Rendering;
+using Toders.FindMyContent.Web.Business.Rendering;
 
-namespace Toders.ContentFinder.Models.Pages
+namespace Toders.FindMyContent.Web.Models.Pages
 {
     /// <summary>
     /// Used to logically group pages in the page tree

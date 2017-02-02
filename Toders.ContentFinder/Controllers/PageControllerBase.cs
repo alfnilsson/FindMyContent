@@ -1,12 +1,11 @@
 using System.Web.Mvc;
-using System.Web.Security;
-using Toders.ContentFinder.Business;
-using Toders.ContentFinder.Models.Pages;
-using Toders.ContentFinder.Models.ViewModels;
-using EPiServer.Web.Mvc;
 using EPiServer.Shell.Security;
+using EPiServer.Web.Mvc;
+using Toders.FindMyContent.Web.Business;
+using Toders.FindMyContent.Web.Models.Pages;
+using Toders.FindMyContent.Web.Models.ViewModels;
 
-namespace Toders.ContentFinder.Controllers
+namespace Toders.FindMyContent.Web.Controllers
 {
     /// <summary>
     /// All controllers that renders pages should inherit from this class so that we can 

@@ -2,7 +2,7 @@ using EPiServer.Framework.Localization;
 using EPiServer.ServiceLocation;
 using EPiServer.Web;
 
-namespace Toders.ContentFinder.Business.Channels
+namespace Toders.FindMyContent.Web.Business.Channels
 {
     /// <summary>
     /// Base class for all resolution definitions

@@ -3,7 +3,7 @@ using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
 using EPiServer.ServiceLocation;
 
-namespace Toders.ContentFinder.Business.Initialization
+namespace Toders.FindMyContent.Web.Business.Initialization
 {
     /// <summary>
     /// Module for registering filters which will be applied to controller actions.

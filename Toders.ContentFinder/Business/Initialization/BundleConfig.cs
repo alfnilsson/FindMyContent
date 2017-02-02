@@ -2,7 +2,7 @@ using System.Web.Optimization;
 using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
 
-namespace Toders.ContentFinder.Business.Initialization
+namespace Toders.FindMyContent.Web.Business.Initialization
 {
     [InitializableModule]
     public class BundleConfig : IInitializableModule

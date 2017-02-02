@@ -1,0 +1,77 @@
+﻿@{
+	Layout = null;
+}
+
+@model Toders.FindMyContent.Models.FindMyContent.DetailsModel
+@using EPiServer.Framework.Web.Resources
+@using Toders.FindMyContent.Core
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>@ViewBag.Title</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+	<!-- Shell -->
+	@Html.Raw(ClientResources.RenderResources("ShellCore"))
+	@Html.Raw(ClientResources.RenderResources("ShellWidgets"))
+
+	<!-- LightTheme -->
+	@Html.Raw(ClientResources.RenderResources("ShellCoreLightTheme"))
+
+	<!-- Navigation -->
+	@Html.Raw(ClientResources.RenderResources("Navigation"))
+
+	<!-- Dojo Dashboard -->
+	@Html.Raw(ClientResources.RenderResources("DojoDashboardCompatibility", new[] { ClientResourceType.Style }))
+
+</head>
+<body>
+	@Html.Raw(Html.ShellInitializationScript())
+	<div class="epi-padding">
+
+		<div class="epi-contentContainer epi-fullWidth">
+
+			<div class="epi-contentArea">
+				<h1 class="EP-prefix">@Model.ContentType.Name</h1>
+				<p>This is my example plugin with EPiServer look and feel</p>
+			</div>
+
+			<div class="epi-formArea">
+				<table class="epi-default">
+					<tbody>
+						<tr>
+							<th width="80">Content</th>
+							<th>Name</th>
+							<th width="180">Language</th>
+						</tr>
+						@foreach (var content in Model.Content)
+						{
+							var summary = content.Summary;
+							var masterLanguage = summary.Translations.First(t => t.Key == summary.MasterLanguage);
+							<tr>
+								<td rowspan="@summary.Translations.Count">@summary.ContentLink</td>
+								<td>
+									<a href="@content.EditUrls[masterLanguage.Key]" target="_top">@masterLanguage.Value</a>
+								</td>
+								<td>@masterLanguage.Key (Master Language)</td>
+							</tr>
+							foreach (var translation in summary.Translations.Where(t => t.Key != summary.MasterLanguage))
+							{
+								<tr>
+									<td>
+										<a href="@content.EditUrls[translation.Key]" target="_top">@translation.Value</a>
+									</td>
+									<td>@translation.Key</td>
+								</tr>
+							}
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

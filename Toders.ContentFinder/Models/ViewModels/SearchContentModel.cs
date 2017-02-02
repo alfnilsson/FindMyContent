@@ -1,8 +1,7 @@
 using System.Collections.Generic;
-using System.Web;
-using Toders.ContentFinder.Models.Pages;
+using Toders.FindMyContent.Web.Models.Pages;
 
-namespace Toders.ContentFinder.Models.ViewModels
+namespace Toders.FindMyContent.Web.Models.ViewModels
 {
     public class SearchContentModel : PageViewModel<SearchPage>
     {

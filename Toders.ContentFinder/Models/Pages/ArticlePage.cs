@@ -1,4 +1,4 @@
-namespace Toders.ContentFinder.Models.Pages
+namespace Toders.FindMyContent.Web.Models.Pages
 {
     /// <summary>
     /// Used primarily for publishing news articles on the website

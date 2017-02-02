@@ -2,7 +2,7 @@ using System;
 using EPiServer;
 using EPiServer.Core;
 
-namespace Toders.ContentFinder.Models.ViewModels
+namespace Toders.FindMyContent.Web.Models.ViewModels
 {
     public class ContentRenderingErrorModel
     {

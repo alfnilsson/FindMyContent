@@ -1,7 +1,7 @@
 using EPiServer.Core;
-using Toders.ContentFinder.Models.Pages;
+using Toders.FindMyContent.Web.Models.Pages;
 
-namespace Toders.ContentFinder.Models.ViewModels
+namespace Toders.FindMyContent.Web.Models.ViewModels
 {
     /// <summary>
     /// Defines common characteristics for view models for pages, including properties used by layout files.

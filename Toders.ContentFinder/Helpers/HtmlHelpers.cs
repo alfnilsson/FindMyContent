@@ -6,14 +6,14 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.WebPages;
+using EPiServer;
 using EPiServer.Core;
 using EPiServer.ServiceLocation;
-using Toders.ContentFinder.Business;
 using EPiServer.Web.Mvc.Html;
 using EPiServer.Web.Routing;
-using EPiServer;
+using Toders.FindMyContent.Web.Business;
 
-namespace Toders.ContentFinder.Helpers
+namespace Toders.FindMyContent.Web.Helpers
 {
     public static class HtmlHelpers
     {

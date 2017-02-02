@@ -3,9 +3,9 @@ using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.SpecializedProperties;
-using Toders.ContentFinder.Models.Blocks;
+using Toders.FindMyContent.Web.Models.Blocks;
 
-namespace Toders.ContentFinder.Models.Pages
+namespace Toders.FindMyContent.Web.Models.Pages
 {
     /// <summary>
     /// Used for the site's start page and also acts as a container for site settings

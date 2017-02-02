@@ -1,10 +1,10 @@
 using System.ComponentModel.DataAnnotations;
-using Toders.ContentFinder.Models.Blocks;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
+using Toders.FindMyContent.Web.Models.Blocks;
 
-namespace Toders.ContentFinder.Models.Pages
+namespace Toders.FindMyContent.Web.Models.Pages
 {
     /// <summary>
     /// Used to provide on-site search

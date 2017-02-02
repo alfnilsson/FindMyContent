@@ -6,11 +6,11 @@ using System.Web.Mvc.Html;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.Security;
-using Toders.ContentFinder.Models.ViewModels;
 using EPiServer.Web.Mvc;
 using EPiServer.XForms;
+using Toders.FindMyContent.Web.Models.ViewModels;
 
-namespace Toders.ContentFinder.Business.Rendering
+namespace Toders.FindMyContent.Web.Business.Rendering
 {
     /// <summary>
     /// Wraps an MvcContentRenderer and adds error handling to ensure that blocks and other content

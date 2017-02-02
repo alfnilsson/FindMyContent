@@ -1,11 +1,9 @@
 using System.ComponentModel.DataAnnotations;
-using Toders.ContentFinder.Business;
-using Toders.ContentFinder.Business.EditorDescriptors;
-using Toders.ContentFinder.Business.Rendering;
-using EPiServer.Web;
 using EPiServer.Core;
+using EPiServer.Web;
+using Toders.FindMyContent.Web.Business.Rendering;
 
-namespace Toders.ContentFinder.Models.Pages
+namespace Toders.FindMyContent.Web.Models.Pages
 {
     /// <summary>
     /// Represents contact details for a contact person

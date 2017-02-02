@@ -1,6 +1,6 @@
 using EPiServer.DataAnnotations;
 
-namespace Toders.ContentFinder.Models
+namespace Toders.FindMyContent.Web.Models
 {
     /// <summary>
     /// Attribute to set the default thumbnail for site page and block types

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Globalization;
 using System.Linq;
-using Toders.ContentFinder.Models.Pages;
 using EPiServer;
 using EPiServer.Core;
 using EPiServer.Filters;
 using EPiServer.Web;
+using Toders.FindMyContent.Web.Models.Pages;
 
-namespace Toders.ContentFinder.Business
+namespace Toders.FindMyContent.Web.Business
 {
     public class ContentLocator
     {

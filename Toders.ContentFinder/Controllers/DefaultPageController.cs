@@ -2,10 +2,10 @@ using System;
 using System.Web.Mvc;
 using EPiServer;
 using EPiServer.Framework.DataAnnotations;
-using Toders.ContentFinder.Models.Pages;
-using Toders.ContentFinder.Models.ViewModels;
+using Toders.FindMyContent.Web.Models.Pages;
+using Toders.FindMyContent.Web.Models.ViewModels;
 
-namespace Toders.ContentFinder.Controllers
+namespace Toders.FindMyContent.Web.Controllers
 {
     /// <summary>
     /// Concrete controller that handles all page types that don't have their own specific controllers.

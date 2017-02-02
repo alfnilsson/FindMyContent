@@ -1,12 +1,9 @@
-using System.Collections.Generic;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Routing;
-using EPiServer.Core;
 using EPiServer.SpecializedProperties;
-using Toders.ContentFinder.Models.Blocks;
+using Toders.FindMyContent.Web.Models.Blocks;
 
-namespace Toders.ContentFinder.Models.ViewModels
+namespace Toders.FindMyContent.Web.Models.ViewModels
 {
     public class LayoutModel
     {

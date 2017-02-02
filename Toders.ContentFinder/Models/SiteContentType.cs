@@ -1,6 +1,6 @@
 using EPiServer.DataAnnotations;
 
-namespace Toders.ContentFinder.Models
+namespace Toders.FindMyContent.Web.Models
 {
     /// <summary>
     /// Attribute used for site content types to set default attribute values

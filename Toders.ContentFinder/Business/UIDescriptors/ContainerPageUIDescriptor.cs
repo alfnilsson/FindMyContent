@@ -1,8 +1,7 @@
-using EPiServer.Editor;
 using EPiServer.Shell;
-using Toders.ContentFinder.Models.Pages;
+using Toders.FindMyContent.Web.Models.Pages;
 
-namespace Toders.ContentFinder.Business.UIDescriptors
+namespace Toders.FindMyContent.Web.Business.UIDescriptors
 {
     /// <summary>
     /// Describes how the UI should appear for <see cref="ContainerPage"/> content.

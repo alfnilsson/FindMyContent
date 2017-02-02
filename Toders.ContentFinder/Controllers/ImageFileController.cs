@@ -1,10 +1,10 @@
 using System.Web.Mvc;
-using Toders.ContentFinder.Models.Media;
-using Toders.ContentFinder.Models.ViewModels;
 using EPiServer.Web.Mvc;
 using EPiServer.Web.Routing;
+using Toders.FindMyContent.Web.Models.Media;
+using Toders.FindMyContent.Web.Models.ViewModels;
 
-namespace Toders.ContentFinder.Controllers
+namespace Toders.FindMyContent.Web.Controllers
 {
     /// <summary>
     /// Controller for the image file.

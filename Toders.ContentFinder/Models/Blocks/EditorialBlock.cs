@@ -3,7 +3,7 @@ using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 
-namespace Toders.ContentFinder.Models.Blocks
+namespace Toders.FindMyContent.Web.Models.Blocks
 {
     /// <summary>
     /// Used to insert editorial content edited using a rich-text editor

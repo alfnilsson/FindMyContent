@@ -3,10 +3,10 @@ using EPiServer.DataAbstraction;
 using EPiServer.Filters;
 using EPiServer.Framework.Localization;
 using EPiServer.ServiceLocation;
-using Toders.ContentFinder.Business;
-using Toders.ContentFinder.Models.Blocks;
+using Toders.FindMyContent.Web.Business;
+using Toders.FindMyContent.Web.Models.Blocks;
 
-namespace Toders.ContentFinder.Models.Pages
+namespace Toders.FindMyContent.Web.Models.Pages
 {
     /// <summary>
     /// Presents a news section including a list of the most recent articles on the site

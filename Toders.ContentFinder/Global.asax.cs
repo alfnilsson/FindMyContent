@@ -1,7 +1,6 @@
-﻿using System;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
-namespace Toders.ContentFinder
+namespace Toders.FindMyContent.Web
 {
     public class EPiServerApplication : EPiServer.Global
     {

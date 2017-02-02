@@ -1,15 +1,16 @@
-using Toders.ContentFinder.Models;
-using EPiServer.Core;
-using EPiServer.ServiceLocation;
-using EPiServer.Shell.Security;
-using EPiServer.Web.Routing;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using EPiServer.Security;
+using EPiServer.Core;
 using EPiServer.DataAbstraction;
+using EPiServer.Security;
+using EPiServer.ServiceLocation;
+using EPiServer.Shell.Security;
+using EPiServer.Web.Routing;
+using Toders.FindMyContent.Web.Business;
+using Toders.FindMyContent.Web.Models.Register;
 
-namespace Toders.ContentFinder.Controllers
+namespace Toders.FindMyContent.Web.Controllers
 {
     /// <summary>
     /// Used to register a user for first time

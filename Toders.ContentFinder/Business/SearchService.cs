@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 using System.Web;
+using EPiServer;
 using EPiServer.Core;
 using EPiServer.Search;
 using EPiServer.Search.Queries;
 using EPiServer.Search.Queries.Lucene;
 using EPiServer.Security;
-using EPiServer;
 
-namespace Toders.ContentFinder.Business
+namespace Toders.FindMyContent.Web.Business
 {
     public class SearchService
     {

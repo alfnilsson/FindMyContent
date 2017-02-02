@@ -1,18 +1,16 @@
-using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using EPiServer;
 using EPiServer.Core;
 using EPiServer.Framework.DataAnnotations;
 using EPiServer.Framework.Web;
-using Toders.ContentFinder.Business;
-using Toders.ContentFinder.Business.Rendering;
-using Toders.ContentFinder.Models.Pages;
-using Toders.ContentFinder.Models.ViewModels;
 using EPiServer.Web;
 using EPiServer.Web.Mvc;
-using EPiServer;
+using Toders.FindMyContent.Web.Business;
+using Toders.FindMyContent.Web.Models.Pages;
+using Toders.FindMyContent.Web.Models.ViewModels;
 
-namespace Toders.ContentFinder.Controllers
+namespace Toders.FindMyContent.Web.Controllers
 {
     /* Note: as the content area rendering on Alloy is customized we create ContentArea instances 
      * which we render in the preview view in order to provide editors with a preview which is as 

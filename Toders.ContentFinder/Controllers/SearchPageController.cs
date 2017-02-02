@@ -5,15 +5,13 @@ using System.Web.Mvc;
 using EPiServer.Core;
 using EPiServer.Framework.Web;
 using EPiServer.Search;
-using Toders.ContentFinder.Business;
-using Toders.ContentFinder.Models.Pages;
-using Toders.ContentFinder.Models.ViewModels;
 using EPiServer.Web;
-using EPiServer.Web.Hosting;
-using EPiServer.Web.Mvc.Html;
 using EPiServer.Web.Routing;
+using Toders.FindMyContent.Web.Business;
+using Toders.FindMyContent.Web.Models.Pages;
+using Toders.FindMyContent.Web.Models.ViewModels;
 
-namespace Toders.ContentFinder.Controllers
+namespace Toders.FindMyContent.Web.Controllers
 {
     public class SearchPageController : PageControllerBase<SearchPage>
     {

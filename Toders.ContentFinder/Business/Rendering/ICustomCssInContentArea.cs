@@ -1,4 +1,4 @@
-namespace Toders.ContentFinder.Business.Rendering
+namespace Toders.FindMyContent.Web.Business.Rendering
 {
     /// <summary>
     /// Defines a property for CSS class(es) which will be added to the class

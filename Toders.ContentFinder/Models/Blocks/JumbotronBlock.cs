@@ -1,11 +1,11 @@
 using System.ComponentModel.DataAnnotations;
+using EPiServer;
+using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.Web;
-using EPiServer.Core;
-using EPiServer;
 
-namespace Toders.ContentFinder.Models.Blocks
+namespace Toders.FindMyContent.Web.Models.Blocks
 {
     /// <summary>
     /// Used for a primary message on a page, commonly used on start pages and landing pages

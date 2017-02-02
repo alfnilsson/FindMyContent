@@ -2,13 +2,12 @@ using System.Web.Mvc;
 using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
 using EPiServer.ServiceLocation;
-using Toders.ContentFinder.Business.Rendering;
-using Toders.ContentFinder.Helpers;
 using EPiServer.Web.Mvc;
 using EPiServer.Web.Mvc.Html;
 using StructureMap;
+using Toders.FindMyContent.Web.Business.Rendering;
 
-namespace Toders.ContentFinder.Business.Initialization
+namespace Toders.FindMyContent.Web.Business.Initialization
 {
     [InitializableModule]
     [ModuleDependency(typeof(EPiServer.Web.InitializationModule))]

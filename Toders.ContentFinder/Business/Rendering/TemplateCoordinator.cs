@@ -1,13 +1,13 @@
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.ServiceLocation;
-using Toders.ContentFinder.Controllers;
-using Toders.ContentFinder.Models.Blocks;
-using Toders.ContentFinder.Models.Pages;
 using EPiServer.Web;
 using EPiServer.Web.Mvc;
+using Toders.FindMyContent.Web.Controllers;
+using Toders.FindMyContent.Web.Models.Blocks;
+using Toders.FindMyContent.Web.Models.Pages;
 
-namespace Toders.ContentFinder.Business.Rendering
+namespace Toders.FindMyContent.Web.Business.Rendering
 {
     [ServiceConfiguration(typeof(IViewTemplateModelRegistrator))]
     public class TemplateCoordinator : IViewTemplateModelRegistrator

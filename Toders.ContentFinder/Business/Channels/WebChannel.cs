@@ -1,7 +1,7 @@
 using System.Web;
 using EPiServer.Web;
 
-namespace Toders.ContentFinder.Business.Channels
+namespace Toders.FindMyContent.Web.Business.Channels
 {
     /// <summary>
     /// Defines the 'Web' content channel

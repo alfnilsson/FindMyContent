@@ -1,5 +1,5 @@
-@using Toders.ContentFinder
-@model PageViewModel<LandingPage>
+@using Toders.FindMyContent.Web
+@model Toders.FindMyContent.Web.Models.ViewModels.PageViewModel<Toders.FindMyContent.Web.Models.Pages.LandingPage>
 <div class="campaign-wrapper">
     @Html.PropertyFor(x => x.CurrentPage.MainContentArea, new { CssClass = "row equal-height", tag = Global.ContentAreaTags.FullWidth })
 </div>

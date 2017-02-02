@@ -4,7 +4,7 @@ using EPiServer.DataAnnotations;
 using EPiServer.Framework.DataAnnotations;
 using EPiServer.Web;
 
-namespace Toders.ContentFinder.Models.Media
+namespace Toders.FindMyContent.Web.Models.Media
 {
     [ContentType(GUID = "85468104-E06F-47E5-A317-FC9B83D3CBA6")]
     [MediaDescriptor(ExtensionString = "flv,mp4,webm")]

@@ -1,5 +1,6 @@
-@using Toders.ContentFinder
-@model IPageViewModel<SitePageData>
+@using Toders.FindMyContent.Web
+@using Toders.FindMyContent.Web.Models.Pages
+@model Toders.FindMyContent.Web.Models.ViewModels.IPageViewModel<Toders.FindMyContent.Web.Models.Pages.SitePageData>
 @{ Layout = "~/Views/Shared/Layouts/_Root.cshtml"; }
 
 @{Html.RenderPartial("Breadcrumbs");}

@@ -2,7 +2,7 @@ using System;
 using EPiServer.DataAbstraction;
 using EPiServer.ServiceLocation;
 
-namespace Toders.ContentFinder.Business
+namespace Toders.FindMyContent.Web.Business
 {
     /// <summary>
     /// Provides extension methods for types intended to be used when working with page types

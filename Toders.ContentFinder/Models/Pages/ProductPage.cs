@@ -1,11 +1,11 @@
 using System.ComponentModel.DataAnnotations;
-using Toders.ContentFinder.Models.Blocks;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
-using Toders.ContentFinder.Models.Properties;
+using Toders.FindMyContent.Web.Models.Blocks;
+using Toders.FindMyContent.Web.Models.Properties;
 
-namespace Toders.ContentFinder.Models.Pages
+namespace Toders.FindMyContent.Web.Models.Pages
 {
     /// <summary>
     /// Used to present a single product

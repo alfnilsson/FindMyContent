@@ -1,8 +1,7 @@
-using System;
 using EPiServer.Core;
-using Toders.ContentFinder.Models.Pages;
+using Toders.FindMyContent.Web.Models.Pages;
 
-namespace Toders.ContentFinder.Models.ViewModels
+namespace Toders.FindMyContent.Web.Models.ViewModels
 {
     public class PageViewModel<T> : IPageViewModel<T> where T : SitePageData
     {
