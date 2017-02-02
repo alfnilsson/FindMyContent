@@ -44,9 +44,10 @@
 				<table class="epi-default">
 					<tbody>
 						<tr>
-							<th width="80">Content</th>
+							<th width="80">Id</th>
 							<th>Name</th>
 							<th width="180">Language</th>
+							<th width="180"></th>
 						</tr>
 						@foreach (ContentSummaryModel content in Model.Content)
 						{
@@ -55,17 +56,20 @@
 							<tr>
 								<td rowspan="@summary.Translations.Count">@summary.ContentLink</td>
 								<td>
-									<a href="@content.EditUrls[masterLanguage.Key]" target="_top">@masterLanguage.Value</a>
+									@masterLanguage.Value
 								</td>
 								<td>@masterLanguage.Key (Master Language)</td>
+								<td><a href="@content.EditUrls[masterLanguage.Key]" target="_top">Edit content</a></td>
+
 							</tr>
 							foreach (var translation in summary.Translations.Where(t => t.Key != summary.MasterLanguage))
 							{
 								<tr>
 									<td>
-										<a href="@content.EditUrls[translation.Key]" target="_top">@translation.Value</a>
+										@translation.Value
 									</td>
 									<td>@translation.Key</td>
+									<td><a href="@content.EditUrls[translation.Key]" target="_top">Edit content</a></td>
 								</tr>
 							}
 						}

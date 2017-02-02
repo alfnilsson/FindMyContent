@@ -52,7 +52,7 @@ namespace Toders.FindMyContent.Core
 
                     var translations = new Dictionary<string, string>();
 
-                    string masterLanguageName = "Unknown";
+                    string masterLanguageName = string.Empty;
                     var localizable = content as ILocalizable;
                     if (localizable != null)
                     {
@@ -60,8 +60,9 @@ namespace Toders.FindMyContent.Core
                         masterLanguageName = masterLanguage.Name;
 
                         translations = GetTranslations(contentLink, localizable.ExistingLanguages.Except(new[] { masterLanguage }));
-                        translations.Add(masterLanguageName, content.Name);
                     }
+
+                    translations.Add(masterLanguageName, content.Name);
 
                     return new ContentSummary
                     {
@@ -70,7 +71,7 @@ namespace Toders.FindMyContent.Core
                         MasterLanguage = masterLanguageName,
                         IsDeleted = content.IsDeleted
                     };
-                });
+                }).ToList();
 
             allContent.AddRange(collection);
 

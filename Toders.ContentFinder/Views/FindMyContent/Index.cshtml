@@ -42,9 +42,10 @@
 				<table class="epi-default">
 					<tbody>
 						<tr>
-							<th>Name</th>
+							<th>Id</th>
 							<th>Type</th>
 							<th>Amount of content</th>
+							<th></th>
 						</tr>
 						@foreach (var contentType in Model.ContentTypes)
 						{
@@ -52,16 +53,13 @@
 								<td><a href="Details/@contentType.Id">@contentType.Name</a></td>
 								<td>@contentType.Category</td>
 								<td>@contentType.AmountOfContent</td>
+								<td>Edit Content Type</td>
 							</tr>
 						}
-
 					</tbody>
 				</table>
 			</div>
-
 		</div>
-
 	</div>
-
 </body>
 </html>
