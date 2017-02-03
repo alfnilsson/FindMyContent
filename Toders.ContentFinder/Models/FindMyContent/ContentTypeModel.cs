@@ -15,8 +15,11 @@ namespace Toders.FindMyContent.Models.FindMyContent
         }
 
         public string Name { get; set; }
+
         public int AmountOfContent { get; set; }
+
         public int Id { get; set; }
+
         public ContentTypeCategory Category { get; set; }
     }
 

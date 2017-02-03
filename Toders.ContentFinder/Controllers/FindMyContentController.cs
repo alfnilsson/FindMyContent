@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using EPiServer;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.Editor;
@@ -30,9 +31,11 @@ namespace Toders.FindMyContent.Controllers
 
         public ActionResult Index()
         {
+            var contentTypes = _contentTypeRepository.List().Select(GetContentTypeModel).ToList();
             var model = new OverviewModel
             {
-                ContentTypes = _contentTypeRepository.List().Select(GetContentTypeModel).ToList()
+                ContentTypes = contentTypes,
+                EditUrls = contentTypes.ToDictionary(x => x.Id, CreateEditContentTypeUrl)
             };
 
             return View(string.Empty, model);
@@ -47,25 +50,32 @@ namespace Toders.FindMyContent.Controllers
                 Content = _contentFinder.List(id).Select(x => new ContentSummaryModel
                 {
                     Summary = x,
-                    EditUrls = CreateEditUrls(x)
+                    EditUrls = CreateEditContentUrls(x)
                 }).ToList()
             };
 
             return View(string.Empty, model);
         }
 
-        private Dictionary<string, string> CreateEditUrls(ContentSummary contentSummary)
+        private Dictionary<string, string> CreateEditContentUrls(ContentSummary contentSummary)
         {
             return contentSummary.Translations.ToDictionary(
                 x => x.Key,
                 x => PageEditing.GetEditUrlForLanguage(contentSummary.ContentLink, x.Key));
         }
 
+        private string CreateEditContentTypeUrl(ContentTypeModel contentTypeModel)
+        {
+            var urlBuilder = new UrlBuilder(UriSupport.AbsoluteUrlFromUIBySettings("Admin/EditContentType.aspx"));
+            urlBuilder.QueryCollection["typeId"] = contentTypeModel.Id.ToString();
+            return urlBuilder.ToString();
+        }
+
         private ContentTypeModel GetContentTypeModel(ContentType contentType)
         {
             return new ContentTypeModel
             {
-                Name = contentType.Name,
+                Name = string.Format("{0} ({1})", contentType.FullName, contentType.Name),
                 AmountOfContent = _contentFinder.Count(contentType.ID),
                 Id = contentType.ID,
                 Category = GetCategory(contentType.ModelType)

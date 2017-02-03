@@ -43,17 +43,19 @@
 					<tbody>
 						<tr>
 							<th>Id</th>
-							<th>Type</th>
-							<th>Amount of content</th>
-							<th></th>
+							<th>Name</th>
+							<th>Category</th>
+							<th width="120">Amount of content</th>
+							<th width="120"></th>
 						</tr>
 						@foreach (var contentType in Model.ContentTypes)
 						{
 							<tr>
+								<td>@contentType.Id</td>
 								<td><a href="Details/@contentType.Id">@contentType.Name</a></td>
 								<td>@contentType.Category</td>
 								<td>@contentType.AmountOfContent</td>
-								<td>Edit Content Type</td>
+								<td><a href="@Model.EditUrls[contentType.Id]">Edit Content Type</a></td>
 							</tr>
 						}
 					</tbody>
