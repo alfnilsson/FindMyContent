@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Toders.FindMyContent</id>
+    <version>1.0.0</version>
+    <authors>Alf Nilsson</authors>
+    <owners>Alf Nilsson</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>An Admin Plugin for Episerver CMS to find content based on their Content Types.</description>
+    <releaseNotes>First version.</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>Episerver CMS Admin</tags>
+	<dependencies>
+    </dependencies>
+  </metadata>
+</package>	

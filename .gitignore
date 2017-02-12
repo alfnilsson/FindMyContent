@@ -5,3 +5,5 @@
 !Toders.FindMyContent/Core/**/*.*
 !Toders.FindMyContent/Views/FindMyContent/**/*.*
 !Toders.FindMyContent/Models/FindMyContent/**/*.*
+!Toders.FindMyContent/packages.Toders.FindMyContent.config
+!Toders.FindMyContent/Toders.FindMyContent.nuspec
