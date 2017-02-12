@@ -4,6 +4,34 @@
 
 @model Toders.FindMyContent.Models.FindMyContent.OverviewModel
 @using EPiServer.Framework.Web.Resources
+@using Toders.FindMyContent.Models.FindMyContent
+
+@helper Table(IEnumerable<ContentTypeModel> contentTypes)
+{
+	<div class="epi-formArea">
+		<table class="epi-default">
+			<tbody>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th width="80">Category</th>
+					<th width="120">Amount of content</th>
+					<th width="120"></th>
+				</tr>
+				@foreach (var contentType in contentTypes)
+				{
+					<tr>
+						<td>@contentType.Id</td>
+						<td><a href="Details/@contentType.Id">@contentType.Name</a></td>
+						<td>@contentType.Category</td>
+						<td>@contentType.AmountOfContent</td>
+						<td><a href="@Model.EditUrls[contentType.Id]">Edit Content Type</a></td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+}
 
 <!DOCTYPE html>
 
@@ -37,30 +65,14 @@
 				<h1 class="EP-prefix">Find My Content</h1>
 				<p>Select which Content Type you would like to find.</p>
 			</div>
-
-			<div class="epi-formArea">
-				<table class="epi-default">
-					<tbody>
-						<tr>
-							<th>Id</th>
-							<th>Name</th>
-							<th>Category</th>
-							<th width="120">Amount of content</th>
-							<th width="120"></th>
-						</tr>
-						@foreach (var contentType in Model.ContentTypes)
-						{
-							<tr>
-								<td>@contentType.Id</td>
-								<td><a href="Details/@contentType.Id">@contentType.Name</a></td>
-								<td>@contentType.Category</td>
-								<td>@contentType.AmountOfContent</td>
-								<td><a href="@Model.EditUrls[contentType.Id]">Edit Content Type</a></td>
-							</tr>
-						}
-					</tbody>
-				</table>
-			</div>
+			<h2>Pages</h2>
+			@Table(Model.PageTypes)
+			<h2>Blocks</h2>
+			@Table(Model.BlockTypes)
+			<h2>Media</h2>
+			@Table(Model.MediaTypes)
+			<h2>Other</h2>
+			@Table(Model.OtherTypes)
 		</div>
 	</div>
 </body>

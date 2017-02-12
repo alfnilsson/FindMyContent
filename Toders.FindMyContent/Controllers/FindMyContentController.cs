@@ -31,10 +31,30 @@ namespace Toders.FindMyContent.Controllers
 
         public ActionResult Index()
         {
-            var contentTypes = _contentTypeRepository.List().Select(GetContentTypeModel).ToList();
+            var contentTypes = _contentTypeRepository.List()
+                .Select(CreateContentTypeModel)
+                .OrderBy(contentType => contentType.Name)
+                .ToList();
             var model = new OverviewModel
             {
-                ContentTypes = contentTypes,
+                PageTypes = contentTypes
+                    .Where(x => x.Category == ContentTypeModel.ContentTypeCategory.Page)
+                    .ToList(),
+                BlockTypes = contentTypes
+                    .Where(x => x.Category == ContentTypeModel.ContentTypeCategory.Block)
+                    .ToList(),
+                MediaTypes = contentTypes
+                    .Where(x => x.Category == ContentTypeModel.ContentTypeCategory.Media)
+                    .ToList(),
+                OtherTypes = contentTypes
+                    .Where(x =>
+                        new[]
+                        {
+                            ContentTypeModel.ContentTypeCategory.Page,
+                            ContentTypeModel.ContentTypeCategory.Block,
+                            ContentTypeModel.ContentTypeCategory.Media
+                        }.Contains(x.Category) == false)
+                    .ToList(),
                 EditUrls = contentTypes.ToDictionary(x => x.Id, CreateEditContentTypeUrl)
             };
 
@@ -46,7 +66,7 @@ namespace Toders.FindMyContent.Controllers
             ContentType contentType = _contentTypeRepository.Load(id);
             var model = new DetailsModel
             {
-                ContentType = GetContentTypeModel(contentType),
+                ContentType = CreateContentTypeModel(contentType),
                 Content = _contentFinder.List(id).Select(x => new ContentSummaryModel
                 {
                     Summary = x,
@@ -71,7 +91,7 @@ namespace Toders.FindMyContent.Controllers
             return urlBuilder.ToString();
         }
 
-        private ContentTypeModel GetContentTypeModel(ContentType contentType)
+        private ContentTypeModel CreateContentTypeModel(ContentType contentType)
         {
             return new ContentTypeModel
             {
