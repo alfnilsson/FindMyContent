@@ -15,11 +15,11 @@ namespace Toders.FindMyContent.Core
         }
 
         private static void MapRoutes(RouteCollection routes)
-        {
+        {            
             routes.MapRoute(
-                "FindMyContent",
-                "FindMyContent/{action}",
-                new { controller = "FindMyContent", action = "Index" });
+               "FindMyContent",
+               "FindMyContent/{action}/{id}",
+               new { controller = "FindMyContent", action = "Index", id = UrlParameter.Optional });
         }
 
         public void Uninitialize(InitializationEngine context)
