@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toders.FindMyContent.Web", "Toders.FindMyContent\Toders.FindMyContent.Web.csproj", "{32B621E4-80E1-48A2-8D7B-76D18A5165A3}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toders.FindMyContent", "Toders.FindMyContent\Toders.FindMyContent.csproj", "{77A6E030-CAF6-42B7-AAC2-60676BCBDD00}"
 EndProject
 Global
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{32B621E4-80E1-48A2-8D7B-76D18A5165A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{32B621E4-80E1-48A2-8D7B-76D18A5165A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{32B621E4-80E1-48A2-8D7B-76D18A5165A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{32B621E4-80E1-48A2-8D7B-76D18A5165A3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{77A6E030-CAF6-42B7-AAC2-60676BCBDD00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{77A6E030-CAF6-42B7-AAC2-60676BCBDD00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77A6E030-CAF6-42B7-AAC2-60676BCBDD00}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -24,5 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {448500EE-B357-4222-BD18-BC9DEB2E70BB}
 	EndGlobalSection
 EndGlobal
