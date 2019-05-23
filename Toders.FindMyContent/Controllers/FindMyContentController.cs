@@ -7,19 +7,26 @@ using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.Editor;
 using EPiServer.PlugIn;
+using EPiServer.ServiceLocation;
 using Toders.FindMyContent.Core;
 using Toders.FindMyContent.Models.FindMyContent;
 
 namespace Toders.FindMyContent.Controllers
 {
     [GuiPlugIn(
-        Area = PlugInArea.AdminConfigMenu,
+        Area = PlugInArea.AdminMenu,
         Url = "/FindMyContent/",
         DisplayName = "Find My Content")]
     public class FindMyContentController : Controller
     {
         private readonly IContentTypeRepository _contentTypeRepository;
         private readonly IContentFinder _contentFinder;
+
+        public FindMyContentController()
+        : this(ServiceLocator.Current.GetInstance<IContentTypeRepository>(),
+            ServiceLocator.Current.GetInstance<IContentFinder>())
+        {
+        }
 
         public FindMyContentController(
             IContentTypeRepository contentTypeRepository,
