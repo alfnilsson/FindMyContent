@@ -45,7 +45,7 @@ steps:
 - task: PublishPipelineArtifact@0
   inputs:
     artifactName: 'Toders.FindMyContent'
-    targetPath: '$(Build.ArtifactStagingDirectory)'
+    targetPath: 'https://pkgs.dev.azure.com/alfnilsson/_packaging/Feed/nuget/v3/index.json'
 
 - task: VSTest@2
   inputs:
