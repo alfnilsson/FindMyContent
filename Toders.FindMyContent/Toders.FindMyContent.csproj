@@ -181,11 +181,16 @@
   <ItemGroup>
     <Content Include="Views\FindMyContent\Index.cshtml" />
     <Content Include="Views\FindMyContent\Details.cshtml" />
+    <Content Include="packages.config" />
+    <None Include="web.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="App_Start\" />
     <Folder Include="modules\_protected\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Toders.FindMyContent.nuspec" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
