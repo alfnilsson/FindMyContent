@@ -29,12 +29,18 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
+- task: VSTest@2
+  inputs:
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
 - task: NuGetCommand@2
   inputs:
     command: 'pack'
     feedsToUse: 'select'
     packagesToPack: '**/*.csproj'
     versioningScheme: 'off'
+    buildProperties: 'build=$(packageSuffix)'
 
 - task: NuGetCommand@2
   inputs:
@@ -42,7 +48,7 @@ steps:
     feedsToUse: 'select'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
     nuGetFeedType: 'internal'
-    publishVstsFeed: 'Feed'
+    publishVstsFeed: '$(publishVstsFeed)'
     versioningScheme: 'off'
 
 #- task: PublishBuildArtifacts@1
@@ -55,8 +61,3 @@ steps:
 #  inputs:
 #    artifactName: 'Toders.FindMyContent'
 #    targetPath: 'https://pkgs.dev.azure.com/alfnilsson/_packaging/Feed/nuget/v3/index.json'
-
-- task: VSTest@2
-  inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
