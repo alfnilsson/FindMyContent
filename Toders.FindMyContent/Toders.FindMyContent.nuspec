@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <package >
-  <metadata>
-    <id>Toders.FindMyContent</id>
-    <version>$version$</version>
-    <authors>Alf Nilsson</authors>
-    <owners>Alf Nilsson</owners>
-    <projectUrl>https://github.com/alfnilsson/FindMyContent</projectUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>An Admin Plugin for Episerver CMS to find content based on their Content Types.</description>
-    <releaseNotes>First version.</releaseNotes>
-    <copyright>Copyright 2017</copyright>
-    <tags>Episerver CMS Admin</tags>
-	<dependencies>
-    </dependencies>
-  </metadata>
-</package>	
+	<metadata>
+		<id>Toders.FindMyContent</id>
+		<version>$version$</version>
+		<authors>Alf Nilsson</authors>
+		<owners>Alf Nilsson</owners>
+		<projectUrl>https://github.com/alfnilsson/FindMyContent</projectUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>An Admin Plugin for Episerver CMS to find content based on their Content Types.</description>
+		<releaseNotes>First version.</releaseNotes>
+		<copyright>Copyright 2017</copyright>
+		<tags>Episerver CMS Admin</tags>
+		<dependencies>
+		</dependencies>
+	</metadata>
+</package>
