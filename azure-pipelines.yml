@@ -40,7 +40,7 @@ steps:
     feedsToUse: 'select'
     packagesToPack: '**/*.csproj'
     versioningScheme: 'off'
-    buildProperties: 'build=$(Build.BuildNumber)'
+    buildProperties: 'build=.$(Build.BuildNumber)'
 
 - task: NuGetCommand@2
   inputs:
