@@ -36,11 +36,16 @@ steps:
     packagesToPack: '**/*.csproj'
     versioningScheme: 'off'
 
-- task: PublishBuildArtifacts@1
+#- task: PublishBuildArtifacts@1
+#  inputs:
+#    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+#    ArtifactName: 'FindMyContent'
+#    publishLocation: 'Container'
+
+- task: PublishPipelineArtifact@0
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'FindMyContent'
-    publishLocation: 'Container'
+    artifactName: 'Toders.FindMyContent'
+    targetPath: '$(Build.ArtifactStagingDirectory)'
 
 - task: VSTest@2
   inputs:
