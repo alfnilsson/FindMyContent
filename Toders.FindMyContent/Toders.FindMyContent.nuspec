@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>Toders.FindMyContent</id>
-		<version>$version$</version>
+		<version>$version$$build$</version>
 		<authors>Alf Nilsson</authors>
 		<owners>Alf Nilsson</owners>
 		<projectUrl>https://github.com/alfnilsson/FindMyContent</projectUrl>
