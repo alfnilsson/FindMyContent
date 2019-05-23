@@ -51,11 +51,11 @@ steps:
     publishVstsFeed: '$(publishVstsFeed)'
     versioningScheme: 'off'
 
-#- task: PublishBuildArtifacts@1
-#  inputs:
-#    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-#    ArtifactName: 'FindMyContent'
-#    publishLocation: 'Container'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'FindMyContent'
+    publishLocation: 'Container'
 
 #- task: PublishPipelineArtifact@0
 #  inputs:
