@@ -1,83 +1,80 @@
 ﻿@{
-	Layout = null;
+    Layout = null;
 }
 
 @model Toders.FindMyContent.Models.FindMyContent.DetailsModel
 @using EPiServer.Framework.Web.Resources
+@using EPiServer.Shell.Navigation
 @using Toders.FindMyContent.Core
 @using Toders.FindMyContent.Models.FindMyContent
-@using EPiServer.Shell.Web.Mvc.Html
 
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
-	<title>@ViewBag.Title</title>
-
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-
-	<!-- Shell -->
-	@Html.Raw(ClientResources.RenderResources("ShellCore"))
-	@Html.Raw(ClientResources.RenderResources("ShellWidgets"))
-
-	<!-- LightTheme -->
-	@Html.Raw(ClientResources.RenderResources("ShellCoreLightTheme"))
-
-	<!-- Navigation -->
-	@Html.Raw(ClientResources.RenderResources("Navigation"))
-
-	<!-- Dojo Dashboard -->
-	@Html.Raw(ClientResources.RenderResources("DojoDashboardCompatibility", new[] { ClientResourceType.Style }))
-
+    <title>@ViewData["Title"]</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @ClientResources.RenderResources("admin", new[] { ClientResourceType.Style })
+    <link href="/EPiServer/EPiServer.Cms.UI.Admin/clientResources/favicon.ico" rel="icon" />
 </head>
-<body>
-	@Html.Raw(Html.ShellInitializationScript())
-	<div class="epi-padding">
+<body class="epi-workspace">
+    @Html.Raw(Html.CreatePlatformNavigationMenu())
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div @Html.Raw(Html.ApplyPlatformNavigation()) style="z-index:auto;">
+    </div>
+    <div class="content-area-container">
+        <div class="epi-uif-layout-container">
+            <div class="epi-uif-workspace-container">
+                <div class="epi-uif-workspace">
+                    <div class="epi-contentContainer epi-padding">
+                        <div class="epi-contentArea">
+                            <h2 class="epi-uif-typography mdc-typography--headline4">
+                                @Model.ContentType.Name
+                            </h2>
+                            <p class="EP-systemInfo">Select which Content Type you would like to find.</p>
+                        </div>
 
-		<div class="epi-contentContainer epi-fullWidth">
+                        <div class="epi-formArea">
+                            <table class="epi-default">
+                                <tbody>
+                                    <tr>
+                                        <th width="80">Id</th>
+                                        <th>Name</th>
+                                        <th width="180">Language</th>
+                                        <th width="180"></th>
+                                    </tr>
+                                    @foreach (ContentSummaryModel content in Model.Content)
+                                    {
+                                        var summary = content.Summary;
+                                        var masterLanguage = summary.Translations.First(t => t.Key == summary.MasterLanguage);
+                                        <tr>
+                                            <td rowspan="@summary.Translations.Count">@summary.ContentLink</td>
+                                            <td>
+                                                @masterLanguage.Value
+                                            </td>
+                                            <td>@masterLanguage.Key (Master Language)</td>
+                                            <td><a href="@content.EditUrls[masterLanguage.Key]" target="_top">Edit content</a></td>
 
-			<div class="epi-contentArea">
-				<h1 class="EP-prefix">@Model.ContentType.Name</h1>
-				<p>Here you can find all content for your Content Type.</p>
-			</div>
-
-			<div class="epi-formArea">
-				<table class="epi-default">
-					<tbody>
-						<tr>
-							<th width="80">Id</th>
-							<th>Name</th>
-							<th width="180">Language</th>
-							<th width="180"></th>
-						</tr>
-						@foreach (ContentSummaryModel content in Model.Content)
-						{
-							var summary = content.Summary;
-							var masterLanguage = summary.Translations.First(t => t.Key == summary.MasterLanguage);
-							<tr>
-								<td rowspan="@summary.Translations.Count">@summary.ContentLink</td>
-								<td>
-									@masterLanguage.Value
-								</td>
-								<td>@masterLanguage.Key (Master Language)</td>
-								<td><a href="@content.EditUrls[masterLanguage.Key]" target="_top">Edit content</a></td>
-
-							</tr>
-							foreach (var translation in summary.Translations.Where(t => t.Key != summary.MasterLanguage))
-							{
-								<tr>
-									<td>
-										@translation.Value
-									</td>
-									<td>@translation.Key</td>
-									<td><a href="@content.EditUrls[translation.Key]" target="_top">Edit content</a></td>
-								</tr>
-							}
-						}
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
+                                        </tr>
+                                        foreach (var translation in summary.Translations.Where(t => t.Key != summary.MasterLanguage))
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @translation.Value
+                                                </td>
+                                                <td>@translation.Key</td>
+                                                <td><a href="@content.EditUrls[translation.Key]" target="_top">Edit content</a></td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

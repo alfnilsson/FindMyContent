@@ -27,6 +27,6 @@ namespace Toders.FindMyContent.Models.FindMyContent
     {
         public ContentSummary Summary { get; set; }
 
-        public Dictionary<string, string> EditUrls { get; set; } 
+        public Dictionary<string, string> EditUrls { get; set; }
     }
 }

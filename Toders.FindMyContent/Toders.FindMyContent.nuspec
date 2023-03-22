@@ -3,14 +3,14 @@
 	<metadata>
 		<id>Toders.FindMyContent</id>
 		<version>$version$$build$</version>
-		<authors>Alf Nilsson</authors>
+		<authors>Alf Nilsson, Mikael Johansson</authors>
 		<owners>Alf Nilsson</owners>
 		<projectUrl>https://github.com/alfnilsson/FindMyContent</projectUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description>An Admin Plugin for Episerver CMS to find content based on their Content Types.</description>
-		<releaseNotes>Updated to 11.9.2.</releaseNotes>
-		<copyright>Copyright 2017</copyright>
-		<tags>Episerver CMS Admin</tags>
+		<description>An Admin Plugin for Optimizely CMS to find content based on their Content Types.</description>
+		<releaseNotes>Updated to 12.3.1.</releaseNotes>
+		<copyright>Copyright 2023</copyright>
+		<tags>Optimizely CMS Admin</tags>
 		<dependencies>
 		</dependencies>
 	</metadata>

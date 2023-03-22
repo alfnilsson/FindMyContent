@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using EPiServer.Core;
+﻿using EPiServer.Core;
+using System.Collections.Generic;
 
 namespace Toders.FindMyContent.Core
 {

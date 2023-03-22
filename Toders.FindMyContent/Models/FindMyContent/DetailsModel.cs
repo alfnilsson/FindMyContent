@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Toders.FindMyContent.Core;
 
 namespace Toders.FindMyContent.Models.FindMyContent
 {

@@ -1,80 +1,80 @@
-﻿@{
-	Layout = null;
+@using Microsoft.AspNetCore.Mvc.Razor
+@{
+    Layout = null;
 }
 
 @model Toders.FindMyContent.Models.FindMyContent.OverviewModel
 @using EPiServer.Framework.Web.Resources
+@using EPiServer.Shell.Navigation
 @using Toders.FindMyContent.Models.FindMyContent
-@using EPiServer.Shell.Web.Mvc.Html
 
-@helper Table(IEnumerable<ContentTypeModel> contentTypes)
-{
-	<div class="epi-formArea">
-		<table class="epi-default">
-			<tbody>
-				<tr>
-					<th>Id</th>
-					<th>Name</th>
-					<th width="80">Category</th>
-					<th width="120">Amount of content</th>
-					<th width="120"></th>
-				</tr>
-				@foreach (var contentType in contentTypes)
-				{
-					<tr>
-						<td>@contentType.Id</td>
-						<td><a href="Details/@contentType.Id">@contentType.Name</a></td>
-						<td>@contentType.Category</td>
-						<td>@contentType.AmountOfContent</td>
-						<td><a href="@Model.EditUrls[contentType.Id]">Edit Content Type</a></td>
-					</tr>
-				}
-			</tbody>
-		</table>
-	</div>
+@{
+    HelperResult Table(IEnumerable<ContentTypeModel> contentTypes)
+    {
+        <div class="epi-formArea">
+            <table class="epi-default">
+                <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th width="80">Category</th>
+                        <th width="120">Amount of content</th>
+                        <th width="120"></th>
+                    </tr>
+                    @foreach (var contentType in contentTypes)
+                    {
+                        <tr>
+                            <td>@contentType.Id</td>
+                            <td><a href="Details/@contentType.Id">@contentType.Name</a></td>
+                            <td>@contentType.Category</td>
+                            <td>@contentType.AmountOfContent</td>
+                            <td><a href="@Model.EditUrls[contentType.Id]">Edit Content Type</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        return new HelperResult(w => Task.CompletedTask);
+    }
 }
 
 <!DOCTYPE html>
 
 <html>
 <head>
-	<title>@ViewBag.Title</title>
-
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-
-	<!-- Shell -->
-	@Html.Raw(ClientResources.RenderResources("ShellCore"))
-	@Html.Raw(ClientResources.RenderResources("ShellWidgets"))
-
-	<!-- LightTheme -->
-	@Html.Raw(ClientResources.RenderResources("ShellCoreLightTheme"))
-
-	<!-- Navigation -->
-	@Html.Raw(ClientResources.RenderResources("Navigation"))
-
-	<!-- Dojo Dashboard -->
-	@Html.Raw(ClientResources.RenderResources("DojoDashboardCompatibility", new[] { ClientResourceType.Style }))
-
+    <title>@ViewData["Title"]</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @ClientResources.RenderResources("admin", new[] { ClientResourceType.Style })
+    <link href="/EPiServer/EPiServer.Cms.UI.Admin/clientResources/favicon.ico" rel="icon" />
 </head>
-<body>
-	@Html.Raw(Html.ShellInitializationScript())
-	<div class="epi-padding">
-
-		<div class="epi-contentContainer epi-fullWidth">
-
-			<div class="epi-contentArea">
-				<h1 class="EP-prefix">Find My Content</h1>
-				<p>Select which Content Type you would like to find.</p>
-			</div>
-			<h2>Pages</h2>
-			@Table(Model.PageTypes)
-			<h2>Blocks</h2>
-			@Table(Model.BlockTypes)
-			<h2>Media</h2>
-			@Table(Model.MediaTypes)
-			<h2>Other</h2>
-			@Table(Model.OtherTypes)
-		</div>
-	</div>
+<body class="epi-workspace">
+    @Html.Raw(Html.CreatePlatformNavigationMenu())
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div @Html.Raw(Html.ApplyPlatformNavigation()) style="z-index:auto;">
+    </div>
+    <div class="content-area-container">
+        <div class="epi-uif-layout-container">
+            <div class="epi-uif-workspace-container">
+                <div class="epi-uif-workspace">
+                    <div class="epi-contentContainer epi-padding">
+                        <div class="epi-contentArea">
+                            <h2 class="epi-uif-typography mdc-typography--headline4">Find My Content</h2>
+                            <p class="EP-systemInfo">Select which Content Type you would like to find.</p>
+                        </div>
+                        <h2>Pages</h2>
+                        @Table(Model.PageTypes)
+                        <h2>Blocks</h2>
+                        @Table(Model.BlockTypes)
+                        <h2>Media</h2>
+                        @Table(Model.MediaTypes)
+                        <h2>Other</h2>
+                        @Table(Model.OtherTypes)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

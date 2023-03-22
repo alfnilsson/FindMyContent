@@ -1,41 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Mvc;
-using EPiServer;
-using EPiServer.Core;
+﻿using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.Editor;
-using EPiServer.PlugIn;
-using EPiServer.ServiceLocation;
+using EPiServer.Shell.Modules;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using Toders.FindMyContent.Core;
 using Toders.FindMyContent.Models.FindMyContent;
 
 namespace Toders.FindMyContent.Controllers
 {
-    [GuiPlugIn(
-        Area = PlugInArea.AdminMenu,
-        Url = "/FindMyContent/",
-        DisplayName = "Find My Content")]
+    [Authorize(Roles = "CmsAdmins")]
     public class FindMyContentController : Controller
     {
         private readonly IContentTypeRepository _contentTypeRepository;
         private readonly IContentFinder _contentFinder;
-
-        public FindMyContentController()
-        : this(ServiceLocator.Current.GetInstance<IContentTypeRepository>(),
-            ServiceLocator.Current.GetInstance<IContentFinder>())
-        {
-        }
+        private readonly ProtectedModuleOptions _protectedModuleOptions;
 
         public FindMyContentController(
             IContentTypeRepository contentTypeRepository,
-            IContentFinder contentFinder)
+            IContentFinder contentFinder,
+            ProtectedModuleOptions protectedModuleOptions)
         {
             _contentTypeRepository = contentTypeRepository;
             _contentFinder = contentFinder;
+            _protectedModuleOptions = protectedModuleOptions;
         }
 
+        [Route("FindMyContent")]
+        [HttpGet]
         public ActionResult Index()
         {
             var contentTypes = _contentTypeRepository.List()
@@ -65,9 +61,11 @@ namespace Toders.FindMyContent.Controllers
                 EditUrls = contentTypes.ToDictionary(x => x.Id, CreateEditContentTypeUrl)
             };
 
-            return View(string.Empty, model);
+            return View(model);
         }
 
+        [Route("FindMyContent/Details/{id}")]
+        [HttpGet]
         public ActionResult Details(int id)
         {
             ContentType contentType = _contentTypeRepository.Load(id);
@@ -81,7 +79,7 @@ namespace Toders.FindMyContent.Controllers
                 }).ToList()
             };
 
-            return View(string.Empty, model);
+            return View(model);
         }
 
         private Dictionary<string, string> CreateEditContentUrls(ContentSummary contentSummary)
@@ -93,9 +91,8 @@ namespace Toders.FindMyContent.Controllers
 
         private string CreateEditContentTypeUrl(ContentTypeModel contentTypeModel)
         {
-            var urlBuilder = new UrlBuilder(UriSupport.AbsoluteUrlFromUIBySettings("Admin/EditContentType.aspx"));
-            urlBuilder.QueryCollection["typeId"] = contentTypeModel.Id.ToString();
-            return urlBuilder.ToString();
+            var rootPath = _protectedModuleOptions.RootPath.Replace("~", string.Empty);
+            return Path.Join(rootPath, $"/EPiServer.Cms.UI.Admin/default#/ContentTypes/edit-content-type/{contentTypeModel.Id}");
         }
 
         private ContentTypeModel CreateContentTypeModel(ContentType contentType)
